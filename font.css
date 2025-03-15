@@ -8,3 +8,8 @@
 	font-family: "Segoe UI Custom";
 	src: url("segoe.ttf") format("truetype");
 }
+@font-face {
+	font-family: "Heroeau";
+	src: url("heroeau.otf") format("opentype"),
+		url("heroeau.ttf") format("truetype");
+}

@@ -1,0 +1,203 @@
+body {
+	background-color: rgb(30, 30, 30);
+	font-family: "sfpro";
+	margin: 0;
+	padding: 0;
+}
+
+#load-cover {
+	position: fixed; /* Fixes it to the viewport */
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: block;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.5
+	); /* Optional, to give it a semi-transparent background */
+	z-index: 9999; /* Makes sure it's on top of other elements */
+	opacity: 1;
+	transition: opacity 1s ease-out; /* Smooth fade-out transition */
+}
+
+#load-cover button {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -40%);
+}
+
+svg {
+	height: 30vh;
+	width: 30vh;
+	filter: invert();
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#ring {
+	animation: rotate 15s infinite linear;
+	transform-origin: center; /* Rotate around the center of the #ring */
+	transition: rotate 250ms ease;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#hero {
+	position: absolute;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	display: block;
+	text-align: center;
+	background-image: url("bg.JPG");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 0% 10%;
+	box-sizing: border-box;
+}
+
+#hero-grad {
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		0deg,
+		rgba(20, 20, 20, 1) 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
+}
+
+.content {
+	display: block;
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	backdrop-filter: blur(40px);
+	color: white;
+}
+#hero .content .in {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	filter: blur(20px);
+}
+
+.monkey {
+	position: absolute;
+	width: 50px; /* Adjust based on the size of your PNG */
+	height: 50px;
+	animation: jump 3s ease-in-out infinite;
+}
+
+@keyframes jump {
+	0% {
+		transform: translateX(0) translateY(0); /* Start position */
+	}
+	25% {
+		transform: translateX(100px) translateY(-100px); /* Move up and to the right */
+	}
+	50% {
+		transform: translateX(200px) translateY(0); /* Go back down and to the right */
+	}
+	75% {
+		transform: translateX(300px) translateY(-100px); /* Move up again */
+	}
+	100% {
+		transform: translateX(400px) translateY(0); /* End at the bottom */
+	}
+}
+
+#who {
+	display: block;
+	height: 100vh;
+	width: 100vw;
+	top: 100vh;
+	position: absolute;
+	background-image: url("who.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.center-horiz {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+.center-vert {
+	display: flex;
+	align-items: center;
+}
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.left,
+.right {
+	height: 100vh;
+	width: 50vw;
+}
+.left {
+	left: 0;
+	float: left;
+}
+.right {
+	right: 0;
+	float: right;
+}
+
+@media screen and (max-width: 900px) {
+	.left,
+	.right {
+		height: 50vh;
+		width: 100vw;
+	}
+}
+
+button {
+	background: linear-gradient(
+		209deg,
+		#ea6044 39%,
+		#dc5083 50%,
+		#9a6df7 67%,
+		#3f8def 81%
+	);
+	background-size: auto;
+	background-clip: border-box;
+	background-size: 200%;
+	animation: backgroundMove 10s ease-in-out infinite;
+	padding: 10px;
+	color: white;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-family: "sfpro";
+	font-size: medium;
+	transition: scale 250ms ease;
+	cursor: pointer;
+}
+button:hover {
+	scale: 1.1;
+}
+button:active {
+	scale: 0.9;
+}
+@keyframes backgroundMove {
+	50% {
+		background-position: 100% 100%;
+	}
+}
